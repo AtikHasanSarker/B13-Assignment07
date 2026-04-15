@@ -1,16 +1,51 @@
-# React + Vite
+# 🌿 KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**KeenKeeper** is a modern React-based web application designed to help you maintain meaningful relationships. It allows users to track interactions, set goals, and stay connected with friends through a clean and intuitive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* 👥 **Friend Management**
+  View and manage your connections with detailed profiles.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 📊 **Timeline Tracking**
+  Keep track of interactions like calls, texts, and video chats.
 
-## Expanding the ESLint configuration
+* ⚡ **Quick Check-In**
+  Instantly log actions (Call, Text, Video) with one click.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 📈 **Stats & Visualization**
+  Analyze relationship activity using charts (Recharts).
+
+* 🔔 **Notifications & Feedback**
+  Toast notifications for user actions.
+
+* 🎯 **Goal Tracking**
+  Set and monitor communication goals.
+
+* 🎨 **Modern UI/UX**
+  Built with Tailwind CSS & DaisyUI for a clean design.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React, React Router
+* **State Management:** Context API
+* **Styling:** Tailwind CSS, DaisyUI
+* **Charts:** Recharts
+* **Notifications:** React Toastify
+* **Icons:** React Icons
+
+---
+
+## 👨‍💻 Author
+
+**Atik Hasan Sarker**
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!

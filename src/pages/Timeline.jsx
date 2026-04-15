@@ -8,39 +8,41 @@ const Timeline = () => {
     const { timeline} = useContext(TimelineContext);
     console.log(timeline)
     return (
-      <div className="max-w-285 mx-auto my-20">
-        <h3 className="font-semibold text-5xl">Timeline</h3>
-        <div className="my-6">Filter Timeline</div>
-        <div className="space-y-6">
-          {timeline.map((item, ind) => (
-            <div
-              key={ind}
-              className="flex items-center gap-4 p-4 rounded-2xl border border-gray-200 hover:bg-gray-300 hover:cursor-grab transition duration-300"
-            >
-              <img
-                src={
-                  item.action == "Call"
-                    ? call
-                    : item.action == "Text"
-                      ? text
-                      : item.action == "Video"
-                        ? video
-                        : ""
-                }
-                alt=""
-                className="w-10"
-              />
-              <div>
-                <h4>
-                  <span className="text-xl text-success-content font-semibold">
-                    {item.action}
-                  </span>
-                  <span className='text-lg'> with {item.name}</span>
-                </h4>
-                <p>{new Date().toDateString()}</p>
+      <div className="bg-gray-100">
+        <div className="max-w-285 mx-auto px-5 py-10 md:py-20">
+          <h3 className="font-semibold text-4xl md:text-5xl">Timeline</h3>
+          <div className="my-6">Filter Timeline</div>
+          <div className="space-y-6">
+            {timeline.map((item, ind) => (
+              <div
+                key={ind}
+                className="flex items-center bg-white gap-4 p-4 rounded-2xl border border-gray-200 hover:bg-amber-50 hover:cursor-grab transition duration-300"
+              >
+                <img
+                  src={
+                    item.action == "Call"
+                      ? call
+                      : item.action == "Text"
+                        ? text
+                        : item.action == "Video"
+                          ? video
+                          : ""
+                  }
+                  alt=""
+                  className="w-10"
+                />
+                <div>
+                  <h4>
+                    <span className="text-xl text-success-content font-semibold">
+                      {item.action}
+                    </span>
+                    <span className="text-lg"> with {item.name}</span>
+                  </h4>
+                  <p>{new Date().toDateString()}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     );

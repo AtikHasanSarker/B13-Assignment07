@@ -4,7 +4,7 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 const Footer = () => {
   return (
     <footer className="bg-success-content text-white pt-20 pb-8">
-      <div className="max-w-285 mx-auto text-center">
+      <div className="max-w-285 mx-auto px-5 text-center">
         <h1 className="text-4xl md:text-6xl font-bold">KeenKeeper</h1>
 
         <p className="mt-4 text-gray-200">

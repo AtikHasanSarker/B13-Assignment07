@@ -4,7 +4,7 @@ import MyNavLink from "./shared/MyLink";
 const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm sticky top-0 z-50">
-      <div className="navbar max-w-285 mx-auto">
+      <div className="navbar max-w-350 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,10 +32,10 @@ const Navbar = () => {
                 <MyNavLink to={"/"}>Home</MyNavLink>
               </li>
               <li>
-                <MyNavLink to={"/timeline"}>timeline</MyNavLink>
+                <MyNavLink to={"/timeline"}>Timeline</MyNavLink>
               </li>
               <li>
-                <MyNavLink to={"/stats"}>stats</MyNavLink>
+                <MyNavLink to={"/stats"}>Stats</MyNavLink>
               </li>
             </ul>
           </div>

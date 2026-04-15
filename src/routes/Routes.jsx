@@ -14,14 +14,14 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("/public/friends.json"),
+        loader: () => fetch("/friends.json"),
         Component: Homepage,
       },
       { path: "timeline", Component: Timeline },
       { path: "stats", Component: Stats },
       {
         path: "friend/:id",
-        loader: () => fetch("/public/friends.json"),
+        loader: () => fetch("/friends.json"),
         Component: FriendDetails,
       },
     ],
