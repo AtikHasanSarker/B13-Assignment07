@@ -8,7 +8,7 @@ const FriendList = () => {
       <div>
         <div className="grid grid-cols-4 gap-8 text-center">
           <div className="p-8 rounded-md border border-gray-200">
-            <h4 className="font-semibold text-3xl">10</h4>
+            <h4 className="font-semibold text-3xl">{friends.length}</h4>
             <p className="text-[#64748B]">Total Friends</p>
           </div>
           <div className="p-8 rounded-md border border-gray-200">

@@ -17,12 +17,14 @@ const FriendCard = ({ friend }) => {
 
         <p className="text-sm text-gray-400 mb-2">{days_since_contact}d ago</p>
 
-        <span className="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full mb-2">
-          {tags[0]}
+        <span className="text-xs font-semibold bg-green-100 text-success-content px-3 py-1 rounded-full mb-2">
+          {tags[0].toUpperCase()}
         </span>
 
-        <span className="text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full">
-          {status}
+        <span
+          className={`mx-auto text-xs px-3 font-semibold py-1.5 rounded-full w-fit text-white ${status == "overdue" ? "bg-red-500" : status == "almost due" ? "bg-amber-500" : "bg-success-content"}`}
+        >
+          {status.toUpperCase()}
         </span>
       </div>
     </NavLink>

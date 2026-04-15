@@ -40,8 +40,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="">
-            <p className="font-medium text-2xl">
-              <span className="font-bold">Keen</span>Keeper
+            <p className="font-medium text-3xl">
+              <span className="font-bold">Keen</span>
+              <span className="text-success-content">Keeper</span>
             </p>
           </div>
         </div>
