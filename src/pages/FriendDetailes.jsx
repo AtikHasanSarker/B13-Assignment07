@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData, useNavigation, useParams } from 'react-router';
 import { TimelineContext } from '../context/ContextProvider';
 import { toast } from 'react-toastify';
 import { FiPhoneCall } from 'react-icons/fi';
@@ -7,8 +7,10 @@ import { BiMessageRoundedDots } from 'react-icons/bi';
 import { GoDeviceCameraVideo } from 'react-icons/go';
 import { RiDeleteBin6Line, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { VscArchive } from 'react-icons/vsc';
+import { GridLoader } from 'react-spinners';
 
 const FriendDetails = () => {
+  const navigation = useNavigation();
   
     const {id} = useParams();
     const friends = useLoaderData()
@@ -41,6 +43,11 @@ const FriendDetails = () => {
     return (
       <div>
         <div className="bg-gray-100 py-20">
+          {navigation.state === "loading" && (
+            <div className="flex justify-center my-10">
+              <GridLoader className="text-3xl" color="#980ffa" />
+            </div>
+          )}
           <div className="max-w-5xl mx-auto grid grid-cols-12 gap-4">
             <div className="col-span-4 space-y-3">
               <div className="bg-white rounded-xl shadow p-6 text-center">
@@ -66,9 +73,13 @@ const FriendDetails = () => {
                   ))}
                 </div>
 
-                <p className="font-semibold text-gray-500 my-2 italic">"{bio}"</p>
+                <p className="font-semibold text-gray-500 my-2 italic">
+                  "{bio}"
+                </p>
 
-                <p className="text-sm font-semibold text-gray-500">Email: {email}</p>
+                <p className="text-sm font-semibold text-gray-500">
+                  Email: {email}
+                </p>
               </div>
 
               <div className="bg-white rounded-lg shadow p-4 flex justify-center font-semibold items-center gap-2 cursor-pointer hover:bg-gray-50">
@@ -108,7 +119,6 @@ const FriendDetails = () => {
                 </div>
               </div>
 
-              {/* RELATIONSHIP GOAL */}
               <div className="bg-white rounded-xl shadow p-6">
                 <div className="flex justify-between items-center">
                   <h3 className="font-semibold text-xl text-success-content mb-4">
