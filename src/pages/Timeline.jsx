@@ -3,8 +3,8 @@ import { TimelineContext } from '../context/ContextProvider';
 import text from "../assets/icons/text.png"
 
 const Timeline = () => {
-    const data = useContext(TimelineContext)
-    console.log(data)
+    const { timeline} = useContext(TimelineContext);
+    console.log(timeline)
     return (
       <div className="max-w-285 mx-auto my-20">
         <h3 className="font-semibold text-2xl">Timeline</h3>
