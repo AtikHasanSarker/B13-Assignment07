@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { TimelineContext } from '../context/ContextProvider';
+import { toast } from 'react-toastify';
 
 const FriendDetails = () => {
   
@@ -17,6 +18,10 @@ const FriendDetails = () => {
         action,
       };
       setTimeline([...timeline, info])
+      toast.success(`${action} with ${name}`, {
+        position: "top-center",
+        autoClose: 2000,
+      });
     };
     return (
       <div>
@@ -24,12 +29,12 @@ const FriendDetails = () => {
           <div className="max-w-5xl mx-auto grid grid-cols-12 gap-4">
             {/* LEFT PROFILE CARD */}
             <div className="col-span-4 space-y-3">
-              <div className="bg-white rounded-xl shadow p-5 text-center">
+              <div className="bg-white rounded-xl shadow p-6 text-center">
                 <img
                   src={picture}
-                  className="w-16 h-16 rounded-full object-cover mx-auto mb-3"
+                  className="w-20 h-20 rounded-full object-cover mx-auto mb-3"
                 />
-                <h2 className="font-semibold text-gray-800">{name}</h2>
+                <h2 className="font-semibold text-xl text-gray-800">{name}</h2>
 
                 <div className="flex justify-center gap-2 mt-2">
                   <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full">
@@ -40,9 +45,9 @@ const FriendDetails = () => {
                   </span>
                 </div>
 
-                <p className="text-sm text-gray-500 mt-3 italic">{bio}</p>
+                <p className="font-medium text-gray-500 mt-3 italic">{bio}</p>
 
-                <p className="text-xs text-gray-400 mt-1">Email: {email}</p>
+                <p className="text-sm text-gray-500 mt-3">Email: {email}</p>
               </div>
 
               {/* ACTION BUTTONS */}
@@ -60,49 +65,50 @@ const FriendDetails = () => {
             </div>
 
             {/* RIGHT CONTENT */}
-            <div className="col-span-8 space-y-4">
+            <div className="col-span-8 space-y-6">
               {/* TOP STATS */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-6">
                 <div className="bg-white rounded-xl shadow p-5 text-center">
-                  <h2 className="text-2xl font-bold text-gray-800">
+                  <h2 className="text-3xl font-bold text-gray-800 mb-2">
                     {days_since_contact}
                   </h2>
-                  <p className="text-sm text-gray-500">Days Since Contact</p>
+                  <p className="text-gray-500">Days Since Contact</p>
                 </div>
 
                 <div className="bg-white rounded-xl shadow p-5 text-center">
-                  <h2 className="text-2xl font-bold text-gray-800">{goal}</h2>
-                  <p className="text-sm text-gray-500">Goal (Days)</p>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                    {goal}
+                  </h2>
+                  <p className="text-gray-500">Goal (Days)</p>
                 </div>
 
                 <div className="bg-white rounded-xl shadow p-5 text-center">
-                  <h2 className="text-lg font-semibold text-gray-800">
+                  <h2 className="text-3xl font-semibold text-gray-800 mb-2">
                     {next_due_date}
                   </h2>
-                  <p className="text-sm text-gray-500">Next Due</p>
+                  <p className="text-gray-500">Next Due</p>
                 </div>
               </div>
 
               {/* RELATIONSHIP GOAL */}
-              <div className="bg-white rounded-xl shadow p-5 flex justify-between items-center">
-                <div>
-                  <h3 className="font-semibold text-gray-800 mb-1">
+              <div className="bg-white rounded-xl shadow p-6">
+                <div className="flex justify-between items-center">
+                  <h3 className="font-semibold text-xl text-gray-800 mb-4">
                     Relationship Goal
                   </h3>
-                  <p className="text-sm text-gray-500">
-                    Connect every{" "}
-                    <span className="font-semibold text-gray-700">30 days</span>
-                  </p>
+                  <button className="text-sm font-medium btn px-4 py-2 rounded-md hover:bg-gray-50">
+                    Edit
+                  </button>
                 </div>
-
-                <button className="text-sm border px-3 py-1 rounded-md hover:bg-gray-50">
-                  Edit
-                </button>
+                <p className="text-lg text-gray-500">
+                  Connect every
+                  <span className="font-bold text-gray-900"> {goal} days</span>
+                </p>
               </div>
 
               {/* QUICK CHECK-IN */}
               <div className="bg-white rounded-xl shadow p-5">
-                <h3 className="font-semibold text-gray-800 mb-3">
+                <h3 className="font-medium text-xl text-success-content mb-4">
                   Quick Check-In
                 </h3>
 
