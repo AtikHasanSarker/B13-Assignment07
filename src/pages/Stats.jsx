@@ -22,7 +22,8 @@ const Stats = () => {
             Friendship Analytics
           </h3>
           <div>
-            <div className="bg-white py-20 rounded-2xl flex justify-center">
+            <div className="bg-white py-20 rounded-2xl flex justify-center relative">
+              <h4 className='text-2xl text-success-content absolute top-8 left-8'>By Interaction Type</h4>
               <PieChart
                 style={{
                   width: "100%",

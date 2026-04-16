@@ -11,6 +11,7 @@ const FriendCard = ({ friend }) => {
           src={picture}
           alt={name}
           className="w-16 h-16 rounded-full object-cover mb-3"
+          loading="lazy"
         />
 
         <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
