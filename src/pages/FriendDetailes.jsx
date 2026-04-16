@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router";
-import { TimelineContext } from "../context/ContextProvider";
 import { toast } from "react-toastify";
 import { FiPhoneCall } from "react-icons/fi";
 import { BiMessageRoundedDots } from "react-icons/bi";
@@ -9,12 +8,13 @@ import { RiDeleteBin6Line, RiNotificationSnoozeLine } from "react-icons/ri";
 import { VscArchive } from "react-icons/vsc";
 import useFriend from "../hooks/useFriend";
 import { GridLoader } from "react-spinners";
+import { TimelineContext } from "../context/ContextProvider";
 
 const FriendDetails = () => {
   const { friends, loading } = useFriend();
-  console.log(friends);
   const { id } = useParams();
   const expectedFriend = friends.find((friend) => friend.id == id);
+  const { timeline, setTimeline } = useContext(TimelineContext);
   if (loading) {
     return (
       <div className="flex justify-center py-30">
@@ -34,7 +34,6 @@ const FriendDetails = () => {
     status,
   } = expectedFriend;
 
-  const { timeline, setTimeline } = useContext(TimelineContext);
   const handleAction = (action) => {
     const info = {
       name,
@@ -67,8 +66,8 @@ const FriendDetails = () => {
               </div>
 
               <div className="flex justify-center gap-2 mt-2">
-                {tags.map((tag) => (
-                  <span className="text-xs font-semibold bg-green-100 text-success-content px-3 py-1.5 rounded-full">
+                {tags.map((tag, index) => (
+                  <span key={index} className="text-xs font-semibold bg-green-100 text-success-content px-3 py-1.5 rounded-full">
                     {tag.toUpperCase()}
                   </span>
                 ))}

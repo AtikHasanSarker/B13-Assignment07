@@ -13,7 +13,6 @@ const FriendList = () => {
     );
   }
 
-  console.log(friends);
   return (
     <div>
       <div>
