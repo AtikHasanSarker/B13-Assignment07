@@ -23,6 +23,6 @@ export const router = createBrowserRouter([
         Component: FriendDetails,
       },
     ],
-    errorElement: <ErrorPage/>
   },
+  { path: "*", Component: ErrorPage }
 ]);

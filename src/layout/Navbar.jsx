@@ -1,4 +1,7 @@
+import { RiHome2Line } from "react-icons/ri";
 import MyNavLink from "./shared/MyLink";
+import { BiTime } from "react-icons/bi";
+import { LuChartLine } from "react-icons/lu";
 
 
 const Navbar = () => {
@@ -49,13 +52,28 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="flex">
             <li>
-              <MyNavLink to={"/"}>Home</MyNavLink>
+              <MyNavLink to={"/"}>
+                  <span>
+                  <RiHome2Line />
+                  </span>
+                  <span>Home</span>
+              </MyNavLink>
             </li>
             <li>
-              <MyNavLink to={"/timeline"}>Timeline</MyNavLink>
+              <MyNavLink to={"/timeline"}>
+                  <span>
+                  <BiTime />
+                  </span>
+                  <span>Timeline</span>
+              </MyNavLink>
             </li>
             <li>
-              <MyNavLink to={"/stats"}>Stats</MyNavLink>
+              <MyNavLink to={"/stats"}>
+                  <span>
+                  <LuChartLine />
+                  </span>
+                  <span>Stats</span>
+              </MyNavLink>
             </li>
           </ul>
         </div>

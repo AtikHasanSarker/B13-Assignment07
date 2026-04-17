@@ -14,7 +14,7 @@ const FriendList = () => {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="px-8 py-12 rounded-2xl bg-white border border-gray-200">
